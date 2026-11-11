@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ghazi Fragrances by Ali | Admin</title><link rel="stylesheet" href="admin.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script defer src="admin.js"></script></head>
+<body><header><a href="index.html">← View store</a><b>GHAZI FRAGRANCES BY ALI</b><span>PRIVATE ADMIN</span></header><main><div class="heading"><p>STORE MANAGEMENT</p><h1>Manage your fragrances.</h1><span>Changes saved here appear on your customer website.</span></div>
+<section class="panel" id="loginPanel"><h2>Admin sign in</h2><p>Sign in with the admin email and password created in Supabase.</p><form id="loginForm"><label>Email<input type="email" name="email" required></label><label>Password<input type="password" name="password" required></label><button>Sign in</button></form></section>
+<div id="adminArea" hidden><div class="top-actions"><span id="sessionEmail"></span><button class="secondary" id="logout">Logout</button></div>
+<section class="panel"><div class="panel-title"><div><p>CATALOGUE</p><h2 id="formTitle">Add a new perfume</h2></div></div>
+<form id="productForm"><input type="hidden" name="id">
+<label>Perfume name *<input name="name" required maxlength="120"></label>
+<div class="two"><label>Category *<select name="category" required><option value="Men">For Men</option><option value="Women">For Women</option><option value="Unisex">Unisex</option></select></label><label>Retail price (PKR) *<input name="price" type="number" min="1" required></label></div>
+<label>Short description<textarea name="description" rows="2" placeholder="A short introduction shown on the product page"></textarea></label>
+<label>Full product description<textarea name="long_description" rows="4" placeholder="Tell customers more about this fragrance"></textarea></label>
+<div class="two"><label>Fragrance notes<input name="fragrance_notes" placeholder="e.g. citrus, amber, musk"></label><label>Inspired by<input name="inspired_by" placeholder="Optional"></label></div>
+<div class="two"><label>Longevity<input name="longevity" placeholder="Optional"></label><label>Best for<input name="best_for" placeholder="Day, evening, occasions..."></label></div>
+<label>How to use<textarea name="how_to_use" rows="2"></textarea></label>
+<label>Product images (up to 5 total; JPG, PNG or WEBP)<input name="images" type="file" accept="image/png,image/jpeg,image/webp" multiple></label>
+<p class="hint">Choose up to 5 images. Use “Make main” to select the cover image, or “Remove” to delete an image from this product. Existing images stay saved unless you remove them here.</p>
+<div id="imagePreview" class="image-preview"></div>
+<div class="check"><input type="checkbox" name="available" checked><span>Visible on customer website</span></div>
+<div class="actions"><button id="saveButton">Save product</button><button type="button" class="secondary" id="clearForm">Clear form</button></div><p id="formMessage" class="message"></p></form></section>
+<section class="panel"><div class="panel-title"><div><p>YOUR STORE</p><h2>Products</h2></div><button class="secondary" id="refresh">Refresh</button></div><div id="productList" class="product-list">Loading products…</div></section></div></main><footer>Ghazi Fragrances by Ali · Store administration</footer></body></html>
